@@ -3,7 +3,7 @@
 /*
  The MIT License (MIT)
  Copyright (c) 2018 HouSisong
- 
+
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
  files (the "Software"), to deal in the Software without
@@ -12,10 +12,10 @@
  copies of the Software, and to permit persons to whom the
  Software is furnished to do so, subject to the following
  conditions:
- 
+
  The above copyright notice and this permission notice shall be
  included in all copies of the Software.
- 
+
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -70,7 +70,7 @@ static void printUsage(){
 
 #define _kNULL_VALUE (-1)
 
-int main(int argc, const char * argv[]) {
+int zipPatch(int argc, const char * argv[]) {
     const char* oldZipPath=0;
     const char* zipDiffPath=0;
     const char* outNewZipPath=0;
@@ -121,7 +121,7 @@ int main(int argc, const char * argv[]) {
         threadNum=_THREAD_NUMBER_MIN;
     else if (threadNum>_THREAD_NUMBER_MAX)
         threadNum=_THREAD_NUMBER_MAX;
-    
+
     if(arg_values_size==3){
         oldZipPath   =arg_values[0];
         zipDiffPath  =arg_values[1];
@@ -142,7 +142,7 @@ int main(int argc, const char * argv[]) {
     if (tempUncompressFileName!=0)
         printf("maxUncompressMemory:%" PRSizeT "\ntempUncompressFileName:\"%s\"\n",
                maxUncompressMemory,tempUncompressFileName);
-    
+
     double time0=clock_s();
     int exitCode=ZipPatch(oldZipPath,zipDiffPath,outNewZipPath,
                           maxUncompressMemory,tempUncompressFileName,(int)threadNum);
