@@ -12,6 +12,7 @@ extern "C" {
  * Method:    zipPatch
  * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
  */
+extern "C"
 JNIEXPORT jint JNICALL Java_com_demo_apkdiffpatch_ApkDiffPatchUtil_zipPatch
   (JNIEnv *, jclass, jstring, jstring, jstring);
 

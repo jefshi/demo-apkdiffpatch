@@ -11,9 +11,10 @@ cmake_minimum_required(VERSION 3.4.1)
 # Gradle automatically packages shared libraries with your APK.
 
 aux_source_directory(apk_diff_patch APK_DIFF_PATCH_SOURCE_FILES)
+aux_source_directory(apk_diff_patch/patch APK_DIFF_PATCH_SOURCE_PATCH_FILES)
 aux_source_directory(bzip2 BZIP2_SOURCE_FILES)
 aux_source_directory(HDiffPatch HDIFF_PATCH_SOURCE_FILES)
-aux_source_directory(lzma/C LZMA_SOURCE_FILES)
+#aux_source_directory(lzma/C LZMA_SOURCE_FILES)
 aux_source_directory(zlib1.2.11 ZLIB_SOURCE_FILES)
 
 add_library( # Sets the name of the library.
@@ -33,10 +34,12 @@ add_library( # Sets the name of the library.
 
         # Provides a relative path to your source file(s).
         ${APK_DIFF_PATCH_SOURCE_FILES}
+        ${APK_DIFF_PATCH_SOURCE_PATCH_FILES}
         ${BZIP2_SOURCE_FILES}
         ${HDIFF_PATCH_SOURCE_FILES}
-        ${LZMA_SOURCE_FILES}
-        ${ZLIB_SOURCE_FILES})
+#        ${LZMA_SOURCE_FILES}
+        ${ZLIB_SOURCE_FILES}
+        apk-diff-patch-lib.cpp)
 
 # 指定头文件库路径
 include_directories(

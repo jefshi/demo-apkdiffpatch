@@ -70,7 +70,7 @@ static void printUsage(){
 
 #define _kNULL_VALUE (-1)
 
-int zipPatch(int argc, const char * argv[]) {
+int mainZipPatch(int argc, const char ** argv) {
     const char* oldZipPath=0;
     const char* zipDiffPath=0;
     const char* outNewZipPath=0;

@@ -12,13 +12,13 @@ Java_com_demo_apkdiffpatch_ApkDiffPatchUtil_zipPatch(
     const char *patch = env->GetStringUTFChars(patch_, 0);
 //    const char *bsdiff = "bsdiff";
 
-    char *argv[] = {
+    const char *argv[] = {
 //            const_cast<char *>(bsdiff),
             const_cast<char *>(old),
             const_cast<char *>(patch),
             const_cast<char *>(out)
     };
-    int ret = zipPatch(sizeof(argv) / sizeof(argv[0]), argv);
+    int ret = mainZipPatch(sizeof(argv) / sizeof(argv[0]), argv);
 
     env->ReleaseStringUTFChars(old_, old);
     env->ReleaseStringUTFChars(out_, out);
